@@ -1,252 +1,1205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NextStep Careers — Start in Japan. Expand to Europe.</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --navy:#1B2340;
-    --navy-2:#242C4F;
-    --cream:#F6F3EC;
-    --red:#B8443A;
-    --gold:#D4A73D;
-    --sage:#5B7F5E;
-    --ink:#1B2340;
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    font-family:'Inter', sans-serif;
-    background:var(--cream);
-    color:var(--ink);
-    line-height:1.6;
-  }
-  h1,h2,h3{ font-family:'Fraunces', serif; letter-spacing:-0.01em; }
-  .mono{ font-family:'IBM Plex Mono', monospace; letter-spacing:0.04em; text-transform:uppercase; font-size:0.72rem; }
-  a{ color:inherit; text-decoration:none; }
-  img{max-width:100%;}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  /* NAV */
-  nav{
-    display:flex; justify-content:space-between; align-items:center;
-    padding:1.25rem 1.5rem; max-width:1100px; margin:0 auto;
-  }
-  .logo{ font-family:'Fraunces', serif; font-weight:700; font-size:1.15rem; color:var(--navy); }
-  .logo span{ color:var(--red); }
-  .nav-cta{
-    background:var(--navy); color:var(--cream); padding:0.55rem 1.1rem;
-    border-radius:2px; font-size:0.85rem; font-weight:500;
-  }
+  <title>NextStep Careers | Career Support for International Students in Japan</title>
 
-  /* HERO */
-  .hero{
-    background:var(--navy); color:var(--cream);
-    padding:4.5rem 1.5rem 5rem;
-    position:relative; overflow:hidden;
-  }
-  .hero-inner{ max-width:760px; margin:0 auto; text-align:left; }
-  .eyebrow{ color:var(--gold); margin-bottom:1rem; display:block; }
-  .hero h1{
-    font-size:clamp(2.1rem, 6vw, 3.4rem);
-    font-weight:600; line-height:1.12; margin-bottom:1.4rem;
-  }
-  .hero h1 em{ font-style:normal; color:var(--red); }
-  .hero p{ font-size:1.05rem; max-width:520px; color:#C9CCDC; margin-bottom:2rem; }
-  .hero-actions{ display:flex; gap:0.9rem; flex-wrap:wrap; }
-  .btn-primary{
-    background:var(--red); color:#fff; padding:0.85rem 1.5rem;
-    border-radius:2px; font-weight:600; font-size:0.95rem;
-  }
-  .btn-ghost{
-    border:1px solid #4B5378; padding:0.85rem 1.5rem; border-radius:2px;
-    font-size:0.95rem; color:var(--cream);
-  }
+  <meta
+    name="description"
+    content="Resume, interview, job hunting, and career support for international students studying in Japan."
+  >
 
-  /* ROUTE MAP — signature section */
-  .route-section{ padding:5rem 1.5rem 6rem; max-width:1000px; margin:0 auto; }
-  .route-header{ text-align:center; margin-bottom:3.5rem; }
-  .route-header .mono{ color:var(--red); display:block; margin-bottom:0.6rem; }
-  .route-header h2{ font-size:clamp(1.6rem,4vw,2.3rem); }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  .route-map{ position:relative; }
-  .route-line{
-    position:absolute; left:22px; top:14px; bottom:14px; width:4px;
-    background:repeating-linear-gradient(180deg, var(--navy) 0 10px, transparent 10px 16px);
-    border-radius:2px;
-  }
-  @media(min-width:820px){
-    .route-line{ display:none; }
-    .route-map{ display:flex; align-items:flex-start; gap:0; position:relative; padding-top:10px; }
-    .route-map::before{
-      content:""; position:absolute; top:24px; left:5%; right:5%; height:4px;
-      background:repeating-linear-gradient(90deg, var(--navy) 0 10px, transparent 10px 16px);
-      z-index:0;
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --navy: #18213d;
+      --navy-light: #252f52;
+      --cream: #f7f4ed;
+      --white: #ffffff;
+      --red: #bd493f;
+      --gold: #d5aa45;
+      --green: #58785c;
+      --text: #18213d;
+      --gray: #64697a;
+      --border: #e3ded2;
+      --soft-blue: #eef0f7;
     }
-  }
-  .station{ position:relative; padding-left:3.2rem; padding-bottom:2.6rem; }
-  @media(min-width:820px){
-    .station{ flex:1; padding-left:0; padding-bottom:0; text-align:center; z-index:1; }
-  }
-  .station-dot{
-    position:absolute; left:8px; top:2px; width:32px; height:32px; border-radius:50%;
-    background:var(--cream); border:4px solid var(--navy);
-    display:flex; align-items:center; justify-content:center;
-    font-family:'IBM Plex Mono', monospace; font-size:0.7rem; font-weight:700; color:var(--navy);
-  }
-  @media(min-width:820px){
-    .station-dot{ position:static; margin:0 auto 1rem; }
-  }
-  .station.is-optional .station-dot{ border-color:var(--sage); background:var(--cream); color:var(--sage); border-style:dashed; }
-  .station h3{ font-size:1.05rem; margin-bottom:0.3rem; }
-  .station p{ font-size:0.88rem; color:#5A5F72; max-width:220px; }
-  @media(min-width:820px){ .station p{ margin:0 auto; } }
-  .station .tag{ display:inline-block; margin-top:0.5rem; font-size:0.7rem; background:var(--gold); color:var(--navy); padding:0.15rem 0.5rem; border-radius:2px; font-weight:600; }
-  .station.is-optional .tag{ background:transparent; border:1px dashed var(--sage); color:var(--sage); }
 
-  /* SERVICES */
-  .services{ background:#fff; padding:5rem 1.5rem; border-top:1px solid #E7E2D6; border-bottom:1px solid #E7E2D6; }
-  .services-inner{ max-width:1000px; margin:0 auto; }
-  .services-head{ max-width:520px; margin-bottom:3rem; }
-  .services-head .mono{ color:var(--red); margin-bottom:0.6rem; display:block; }
-  .services-head h2{ font-size:clamp(1.5rem,3.5vw,2rem); }
-  .cards{ display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:1.5rem; }
-  .card{ border:1px solid #E7E2D6; padding:1.8rem; border-radius:3px; }
-  .card .flag{ font-family:'IBM Plex Mono', monospace; font-size:0.7rem; color:var(--red); margin-bottom:0.8rem; display:block; }
-  .card h3{ font-size:1.15rem; margin-bottom:0.7rem; }
-  .card ul{ list-style:none; font-size:0.9rem; color:#5A5F72; }
-  .card li{ padding:0.25rem 0; border-top:1px dotted #E7E2D6; }
-  .card li:first-child{ border-top:none; }
-  .card.europe .flag{ color:var(--sage); }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  /* TRUST */
-  .trust{ background:var(--cream); padding:5rem 1.5rem; }
-  .trust-inner{ max-width:700px; margin:0 auto; text-align:center; }
-  .trust h2{ font-size:clamp(1.4rem,3.5vw,1.9rem); margin-bottom:1.2rem; }
-  .trust p{ color:#5A5F72; font-size:1rem; }
-  .trust .principles{ display:flex; flex-wrap:wrap; gap:0.6rem; justify-content:center; margin-top:2rem; }
-  .principles span{ font-size:0.78rem; border:1px solid #D8D2C2; padding:0.4rem 0.8rem; border-radius:20px; color:var(--navy); }
+    html {
+      scroll-behavior: smooth;
+    }
 
-  /* FOOTER */
-  footer{ background:var(--navy); color:#9AA0BE; padding:3rem 1.5rem 2rem; text-align:center; font-size:0.85rem; }
-  footer .logo{ color:var(--cream); margin-bottom:0.8rem; display:inline-block; }
-  footer .logo span{ color:var(--red); }
+    body {
+      font-family: "Inter", sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.7;
+    }
 
-  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
-</style>
+    h1,
+    h2,
+    h3 {
+      font-family: "Fraunces", serif;
+      line-height: 1.2;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      width: min(1100px, calc(100% - 3rem));
+      margin: 0 auto;
+    }
+
+    .mono {
+      font-family: "IBM Plex Mono", monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.72rem;
+      font-weight: 500;
+    }
+
+    .section-label {
+      display: block;
+      color: var(--red);
+      margin-bottom: 0.7rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin-bottom: 1rem;
+    }
+
+    .section-description {
+      max-width: 650px;
+      color: var(--gray);
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.9rem 1.45rem;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: var(--red);
+      color: var(--white);
+    }
+
+    .button-primary:hover {
+      background: #a83f36;
+    }
+
+    .button-secondary {
+      border-color: #59617e;
+      color: var(--white);
+    }
+
+    .button-secondary:hover {
+      background: var(--navy-light);
+    }
+
+    /* Navigation */
+
+    .navbar {
+      background: var(--cream);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-inner {
+      min-height: 74px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .logo {
+      font-family: "Fraunces", serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: var(--red);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: var(--red);
+    }
+
+    .nav-button {
+      background: var(--navy);
+      color: var(--white);
+      padding: 0.6rem 1rem;
+      border-radius: 4px;
+    }
+
+    .nav-button:hover {
+      color: var(--white) !important;
+      background: var(--navy-light);
+    }
+
+    /* Hero */
+
+    .hero {
+      background: var(--navy);
+      color: var(--white);
+      padding: 6rem 0;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero .mono {
+      color: var(--gold);
+      display: block;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      max-width: 800px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 span {
+      color: var(--red);
+    }
+
+    .hero-text {
+      max-width: 650px;
+      color: #c9cddd;
+      font-size: 1.06rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .hero-card {
+      background: var(--cream);
+      color: var(--text);
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 18px 18px 0 var(--red);
+    }
+
+    .hero-card h2 {
+      font-size: 1.45rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-card li {
+      padding: 0.7rem 0;
+      border-bottom: 1px dotted var(--border);
+      font-size: 0.94rem;
+    }
+
+    .hero-card li:last-child {
+      border-bottom: none;
+    }
+
+    .hero-card li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 700;
+      margin-right: 0.7rem;
+    }
+
+    /* Trust bar */
+
+    .trust-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .trust-item {
+      padding: 1.6rem 1rem;
+      text-align: center;
+      border-right: 1px solid var(--border);
+    }
+
+    .trust-item:last-child {
+      border-right: none;
+    }
+
+    .trust-item strong {
+      display: block;
+      font-family: "Fraunces", serif;
+      font-size: 1.08rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .trust-item span {
+      color: var(--gray);
+      font-size: 0.8rem;
+    }
+
+    /* Who we help */
+
+    .who {
+      padding: 6rem 0;
+    }
+
+    .who-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .audience-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .audience-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.5rem;
+    }
+
+    .audience-number {
+      display: inline-flex;
+      width: 34px;
+      height: 34px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--soft-blue);
+      color: var(--navy);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.75rem;
+      margin-bottom: 0.9rem;
+    }
+
+    .audience-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .audience-card p {
+      color: var(--gray);
+      font-size: 0.88rem;
+    }
+
+    /* Journey */
+
+    .journey {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 6rem 0;
+    }
+
+    .journey-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 4rem;
+    }
+
+    .journey-header .section-description {
+      margin: 0 auto;
+    }
+
+    .journey-map {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      position: relative;
+      gap: 0.5rem;
+    }
+
+    .journey-map::before {
+      content: "";
+      position: absolute;
+      top: 25px;
+      left: 7%;
+      right: 7%;
+      height: 4px;
+      background: repeating-linear-gradient(
+        90deg,
+        var(--navy) 0 11px,
+        transparent 11px 18px
+      );
+    }
+
+    .station {
+      position: relative;
+      text-align: center;
+      z-index: 1;
+    }
+
+    .station-dot {
+      width: 50px;
+      height: 50px;
+      margin: 0 auto 1rem;
+      border: 4px solid var(--navy);
+      background: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "IBM Plex Mono", monospace;
+      font-weight: 600;
+      font-size: 0.75rem;
+    }
+
+    .station:last-child .station-dot {
+      background: var(--red);
+      border-color: var(--red);
+      color: var(--white);
+    }
+
+    .station h3 {
+      font-size: 0.98rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .station p {
+      color: var(--gray);
+      font-size: 0.78rem;
+      padding: 0 0.25rem;
+    }
+
+    /* Services */
+
+    .services {
+      padding: 6rem 0;
+    }
+
+    .services-header {
+      max-width: 650px;
+      margin-bottom: 3rem;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.8rem;
+      transition: 0.2s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(24, 33, 61, 0.08);
+    }
+
+    .service-icon {
+      width: 46px;
+      height: 46px;
+      background: var(--soft-blue);
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.12rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .service-card p {
+      font-size: 0.88rem;
+      color: var(--gray);
+    }
+
+    /* Ethics */
+
+    .ethics {
+      background: var(--navy);
+      color: var(--white);
+      padding: 5.5rem 0;
+    }
+
+    .ethics-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .ethics .section-label {
+      color: var(--gold);
+    }
+
+    .ethics p {
+      color: #c7cada;
+    }
+
+    .ethics-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.9rem;
+    }
+
+    .ethics-item {
+      border: 1px solid #3f486b;
+      padding: 1rem;
+      border-radius: 5px;
+      font-size: 0.86rem;
+    }
+
+    .ethics-item::before {
+      content: "✓";
+      color: var(--gold);
+      font-weight: 700;
+      margin-right: 0.55rem;
+    }
+
+    /* About */
+
+    .about {
+      padding: 6rem 0;
+      background: var(--white);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .profile-placeholder {
+      min-height: 360px;
+      background: var(--soft-blue);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--gray);
+      padding: 2rem;
+    }
+
+    .profile-placeholder span {
+      display: block;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .about-content p {
+      color: var(--gray);
+      margin-bottom: 1rem;
+    }
+
+    .about-highlight {
+      margin-top: 1.6rem;
+      padding: 1.2rem;
+      border-left: 4px solid var(--red);
+      background: var(--cream);
+      font-weight: 500;
+    }
+
+    /* CTA */
+
+    .cta {
+      padding: 5.5rem 0;
+      text-align: center;
+    }
+
+    .cta-box {
+      background: var(--red);
+      color: var(--white);
+      padding: 4rem 2rem;
+      border-radius: 8px;
+    }
+
+    .cta-box h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      margin-bottom: 1rem;
+    }
+
+    .cta-box p {
+      max-width: 650px;
+      margin: 0 auto 2rem;
+      color: #f7dddd;
+    }
+
+    .cta-box .button {
+      background: var(--white);
+      color: var(--navy);
+    }
+
+    /* Footer */
+
+    footer {
+      background: var(--navy);
+      color: #abb0c7;
+      padding: 3.5rem 0 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    footer .logo {
+      color: var(--white);
+      display: inline-block;
+      margin-bottom: 0.8rem;
+    }
+
+    footer p,
+    footer a {
+      font-size: 0.86rem;
+    }
+
+    footer h3 {
+      color: var(--white);
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    footer li {
+      margin-bottom: 0.45rem;
+    }
+
+    footer a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #333c5e;
+      padding-top: 1.5rem;
+      text-align: center;
+      font-size: 0.78rem;
+    }
+
+    .coming-soon {
+      margin-top: 1rem;
+      color: var(--gold);
+      font-size: 0.8rem;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .who-grid,
+      .ethics-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        box-shadow: 10px 10px 0 var(--red);
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .journey-map {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem 1rem;
+      }
+
+      .journey-map::before {
+        display: none;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .nav-links a:not(.nav-button) {
+        display: none;
+      }
+
+      .hero {
+        padding: 4.5rem 0;
+      }
+
+      .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .trust-item:nth-child(2) {
+        border-right: none;
+      }
+
+      .trust-item:nth-child(-n+2) {
+        border-bottom: 1px solid var(--border);
+      }
+
+      .audience-list,
+      .service-grid,
+      .ethics-list,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .journey-map {
+        grid-template-columns: 1fr;
+        text-align: left;
+      }
+
+      .station {
+        display: grid;
+        grid-template-columns: 55px 1fr;
+        column-gap: 1rem;
+        text-align: left;
+      }
+
+      .station-dot {
+        grid-row: 1 / 3;
+        margin: 0;
+      }
+
+      .station p {
+        padding: 0;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<nav>
-  <div class="logo">NextStep<span>.</span>Careers</div>
-  <a href="mailto:nextstepcareers911@gmail.com?subject=Getting%20Started" class="nav-cta">Get Started</a>
-</nav>
+  <!-- Navigation -->
 
-<section class="hero">
-  <div class="hero-inner">
-    <span class="mono eyebrow">Career support for international students in Japan</span>
-    <h1>Start your career in <em>Japan.</em><br>Expand your future to Europe.</h1>
-    <p>Honest, step-by-step career guidance — from your student visa to your first job in Japan, and beyond, if you choose. No fake resumes. No shortcuts. Just a real plan.</p>
-    <div class="hero-actions">
-      <a href="mailto:nextstepcareers911@gmail.com?subject=Free%20Consultation%20Request" class="btn-primary">Book a Free Consultation</a>
-      <a href="#route" class="btn-ghost">See the Career Route →</a>
-    </div>
-  </div>
-</section>
+  <header class="navbar">
+    <nav class="container nav-inner">
+      <a href="#" class="logo">
+        NextStep<span>.</span>Careers
+      </a>
 
-<section class="route-section" id="route">
-  <div class="route-header">
-    <span class="mono">Your Route</span>
-    <h2>One journey. Five stops. Your pace.</h2>
-  </div>
-  <div class="route-map">
-    <div class="route-line"></div>
-    <div class="station">
-      <div class="station-dot">01</div>
-      <h3>Study in Japan</h3>
-      <p>Language school or vocational college, building your foundation.</p>
-    </div>
-    <div class="station">
-      <div class="station-dot">02</div>
-      <h3>Get a Job in Japan</h3>
-      <p>履歴書 &amp; 職務経歴書, interview prep, real job search guidance.</p>
-    </div>
-    <div class="station">
-      <div class="station-dot">03</div>
-      <h3>Change Visa</h3>
-      <p>Student → Work visa checklist, done properly and legally.</p>
-    </div>
-    <div class="station">
-      <div class="station-dot">04</div>
-      <h3>Gain Experience</h3>
-      <p>Grow your career and build a track record in Japan.</p>
-    </div>
-    <div class="station is-optional">
-      <div class="station-dot">05</div>
-      <h3>Move to Europe</h3>
-      <p>Optional. CV, cover letter &amp; country guides when you're ready.</p>
-      <span class="tag">Optional route</span>
-    </div>
-  </div>
-</section>
-
-<section class="services" id="services">
-  <div class="services-inner">
-    <div class="services-head">
-      <span class="mono">Services</span>
-      <h2>Support for wherever you are on the route</h2>
-    </div>
-    <div class="cards">
-      <div class="card">
-        <span class="flag">JAPAN</span>
-        <h3>Japan Career Support</h3>
-        <ul>
-          <li>Japanese Resume (履歴書)</li>
-          <li>職務経歴書 Writing</li>
-          <li>Resume Review</li>
-          <li>Interview Preparation</li>
-          <li>Job Search Guidance</li>
-          <li>Student → Work Visa Checklist</li>
-          <li>Application Support</li>
-        </ul>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#journey">Career Route</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="nav-button">Get Started</a>
       </div>
-      <div class="card europe">
-        <span class="flag">EUROPE</span>
-        <h3>Europe Career Support</h3>
-        <ul>
-          <li>Europe-style CV</li>
-          <li>Cover Letter Writing</li>
-          <li>Job Application Guidance</li>
-          <li>Interview Preparation</li>
-          <li>Country Guides</li>
-          <li>Career Planning</li>
-        </ul>
+    </nav>
+  </header>
+
+
+  <!-- Hero -->
+
+  <main>
+
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div>
+          <span class="mono">
+            Career support for international students in Japan
+          </span>
+
+          <h1>
+            Start your professional career in
+            <span>Japan.</span>
+          </h1>
+
+          <p class="hero-text">
+            Practical resume, interview, job-hunting, and career guidance for
+            international students studying at Japanese vocational schools and
+            universities.
+          </p>
+
+          <div class="hero-actions">
+            <a
+              href="mailto:nextstepcareers911@gmail.com?subject=Free%20Career%20Consultation"
+              class="button button-primary"
+            >
+              Book a Free Consultation
+            </a>
+
+            <a href="#services" class="button button-secondary">
+              Explore Our Services
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h2>We can help you with:</h2>
+
+          <ul>
+            <li>Japanese Resume — 履歴書</li>
+            <li>職務経歴書 and Entry Sheet</li>
+            <li>Japanese Interview Preparation</li>
+            <li>Job Search and Application Guidance</li>
+            <li>Student-to-Work Visa Checklist</li>
+          </ul>
+        </div>
+
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section class="trust">
-  <div class="trust-inner">
-    <h2>Built by someone who's lived it</h2>
-    <p>I'm an international student in Japan too — JLPT N2, studying at a vocational college. NextStep Careers exists because I know exactly what this journey feels like, and I only give guidance I'd trust myself.</p>
-    <div class="principles">
-      <span>No fake experience</span>
-      <span>No fake certificates</span>
-      <span>No fake visa info</span>
-      <span>No fake interview answers</span>
-    </div>
-  </div>
-</section>
 
-<footer id="contact">
-  <div class="logo">NextStep<span>.</span>Careers</div>
-  <p>Ready to plan your next step? Reach out for a free first consultation.</p>
-  <p style="margin-top:0.8rem;"><a href="mailto:nextstepcareers911@gmail.com" style="color:#D4A73D; font-weight:500;">nextstepcareers911@gmail.com</a></p>
-  <p style="margin-top:1rem; opacity:0.6;">© 2026 NextStep Careers</p>
-</footer>
+    <!-- Trust Bar -->
+
+    <section class="trust-bar">
+      <div class="container trust-grid">
+
+        <div class="trust-item">
+          <strong>International Students</strong>
+          <span>Specialized career support</span>
+        </div>
+
+        <div class="trust-item">
+          <strong>JLPT N2 Support</strong>
+          <span>Japanese-language guidance</span>
+        </div>
+
+        <div class="trust-item">
+          <strong>Personalized Help</strong>
+          <span>Based on your situation</span>
+        </div>
+
+        <div class="trust-item">
+          <strong>100% Honest</strong>
+          <span>No fake information</span>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Who We Help -->
+
+    <section class="who">
+      <div class="container who-grid">
+
+        <div>
+          <span class="mono section-label">Who We Help</span>
+
+          <h2 class="section-title">
+            Career support designed for students like you
+          </h2>
+
+          <p class="section-description">
+            NextStep Careers supports international students who want to
+            understand Japan's job-hunting system and prepare properly for
+            full-time employment.
+          </p>
+        </div>
+
+        <div class="audience-list">
+
+          <article class="audience-card">
+            <span class="audience-number">01</span>
+            <h3>Language School Graduates</h3>
+            <p>
+              Students who completed Japanese language school and continued
+              into higher education.
+            </p>
+          </article>
+
+          <article class="audience-card">
+            <span class="audience-number">02</span>
+            <h3>Senmon School Students</h3>
+            <p>
+              Vocational school students preparing for their first professional
+              job in Japan.
+            </p>
+          </article>
+
+          <article class="audience-card">
+            <span class="audience-number">03</span>
+            <h3>University Students</h3>
+            <p>
+              International university students starting or struggling with
+              shūkatsu.
+            </p>
+          </article>
+
+          <article class="audience-card">
+            <span class="audience-number">04</span>
+            <h3>Recent Graduates</h3>
+            <p>
+              Graduates who need stronger documents, interview preparation, or
+              application guidance.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Career Journey -->
+
+    <section class="journey" id="journey">
+      <div class="container">
+
+        <div class="journey-header">
+          <span class="mono section-label">Your Career Route</span>
+
+          <h2 class="section-title">
+            From international student to full-time employee
+          </h2>
+
+          <p class="section-description">
+            We help you understand each important stage of preparing for your
+            first professional career in Japan.
+          </p>
+        </div>
+
+        <div class="journey-map">
+
+          <div class="station">
+            <div class="station-dot">01</div>
+            <h3>Language School</h3>
+            <p>Build Japanese ability and understand life in Japan.</p>
+          </div>
+
+          <div class="station">
+            <div class="station-dot">02</div>
+            <h3>Senmon or University</h3>
+            <p>Develop professional knowledge and practical skills.</p>
+          </div>
+
+          <div class="station">
+            <div class="station-dot">03</div>
+            <h3>Resume Preparation</h3>
+            <p>Create 履歴書, 職務経歴書, and application documents.</p>
+          </div>
+
+          <div class="station">
+            <div class="station-dot">04</div>
+            <h3>Job Applications</h3>
+            <p>Find suitable companies and apply with a clear strategy.</p>
+          </div>
+
+          <div class="station">
+            <div class="station-dot">05</div>
+            <h3>Interview</h3>
+            <p>Practice Japanese questions and explain your strengths.</p>
+          </div>
+
+          <div class="station">
+            <div class="station-dot">06</div>
+            <h3>Full-Time Career</h3>
+            <p>Receive an offer and prepare for your work-visa process.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Services -->
+
+    <section class="services" id="services">
+      <div class="container">
+
+        <div class="services-header">
+          <span class="mono section-label">Our Services</span>
+
+          <h2 class="section-title">
+            Practical support for your Japan job search
+          </h2>
+
+          <p class="section-description">
+            Choose the support you need. Every service is personalized according
+            to your education, experience, Japanese level, and career goal.
+          </p>
+        </div>
+
+        <div class="service-grid">
+
+          <article class="service-card">
+            <div class="service-icon">📄</div>
+            <h3>Japanese Resume</h3>
+            <p>
+              Support creating and improving a professional Japanese 履歴書 for
+              your target role.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">📑</div>
+            <h3>職務経歴書 Support</h3>
+            <p>
+              Present your experience, part-time work, achievements, and skills
+              clearly and honestly.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">✍️</div>
+            <h3>志望動機 and Self-PR</h3>
+            <p>
+              Create company-specific motivation statements and strong
+              self-introduction content.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">💬</div>
+            <h3>Interview Preparation</h3>
+            <p>
+              Practice common Japanese interview questions and improve your
+              answers and confidence.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">🔎</div>
+            <h3>Job Search Guidance</h3>
+            <p>
+              Understand where to search, which roles fit your profile, and how
+              to apply strategically.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">📋</div>
+            <h3>Application Guidance</h3>
+            <p>
+              Get support with application forms, professional emails,
+              documents, and next steps.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Ethics -->
+
+    <section class="ethics">
+      <div class="container ethics-grid">
+
+        <div>
+          <span class="mono section-label">Our Principles</span>
+
+          <h2 class="section-title">
+            Honest career support without fake promises
+          </h2>
+
+          <p>
+            We help you present your real experience and strengths professionally.
+            We do not create fake documents, guarantee jobs, or provide false
+            immigration information.
+          </p>
+        </div>
+
+        <div class="ethics-list">
+          <div class="ethics-item">No fake experience</div>
+          <div class="ethics-item">No fake certificates</div>
+          <div class="ethics-item">No guaranteed job claims</div>
+          <div class="ethics-item">No false visa information</div>
+          <div class="ethics-item">No copied interview answers</div>
+          <div class="ethics-item">Personalized support</div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- About -->
+
+    <section class="about" id="about">
+      <div class="container about-grid">
+
+        <div class="profile-placeholder">
+          <div>
+            <span>👤</span>
+            Add your professional photo here later
+          </div>
+        </div>
+
+        <div class="about-content">
+          <span class="mono section-label">Meet Your Career Guide</span>
+
+          <h2 class="section-title">
+            Guidance from someone who understands the journey
+          </h2>
+
+          <p>
+            My name is Prakash Dhamala. I am an international student living in
+            Japan, studying at a vocational college and preparing for my own
+            professional career.
+          </p>
+
+          <p>
+            I completed Japanese language education, passed JLPT N2, and
+            experienced the same challenges many international students face:
+            understanding Japanese resumes, interviews, company applications,
+            and career expectations.
+          </p>
+
+          <p>
+            NextStep Careers was created to make this journey easier, clearer,
+            and more practical for other international students.
+          </p>
+
+          <div class="about-highlight">
+            We do not promise shortcuts. We help you prepare properly and take
+            your next step with confidence.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta" id="contact">
+      <div class="container">
+
+        <div class="cta-box">
+          <h2>Preparing for job hunting in Japan?</h2>
+
+          <p>
+            Tell us about your school, Japanese level, target industry, and
+            current challenge. Your first consultation is free.
+          </p>
+
+          <a
+            href="mailto:nextstepcareers911@gmail.com?subject=Free%20Career%20Consultation&body=Name:%0D%0ASchool:%0D%0AJapanese%20Level:%0D%0ATarget%20Job:%0D%0AWhat%20support%20do%20you%20need?:"
+            class="button"
+          >
+            Contact NextStep Careers
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- Footer -->
+
+  <footer>
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+          <a href="#" class="logo">
+            NextStep<span>.</span>Careers
+          </a>
+
+          <p>
+            Honest and practical career support for international students
+            preparing to work in Japan.
+          </p>
+
+          <p class="coming-soon">
+            Europe Career Support — Coming in the future
+          </p>
+        </div>
+
+        <div>
+          <h3>Services</h3>
+
+          <ul>
+            <li><a href="#services">Japanese Resume</a></li>
+            <li><a href="#services">職務経歴書</a></li>
+            <li><a href="#services">Interview Preparation</a></li>
+            <li><a href="#services">Job Search Guidance</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Contact</h3>
+
+          <ul>
+            <li>
+              <a href="mailto:nextstepcareers911@gmail.com">
+                nextstepcareers911@gmail.com
+              </a>
+            </li>
+
+            <li>Based in Japan</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        © 2026 NextStep Careers. Career support service, not a recruitment agency.
+      </div>
+
+    </div>
+  </footer>
 
 </body>
 </html>
