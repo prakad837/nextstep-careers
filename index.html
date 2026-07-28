@@ -26,6 +26,7 @@
   <style>
     :root {
       --navy: #17213b;
+      --navy-light: #253252;
       --red: #c64f45;
       --red-dark: #a93f37;
       --cream: #f7f4ed;
@@ -34,6 +35,7 @@
       --gray: #666b78;
       --border: #e4dfd5;
       --soft: #f0eee8;
+      --gold: #e0b457;
     }
 
     * {
@@ -64,6 +66,10 @@
     a {
       color: inherit;
       text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
     }
 
     .container {
@@ -158,8 +164,8 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 1.5rem;
-      font-size: 0.9rem;
+      gap: 1.4rem;
+      font-size: 0.88rem;
       font-weight: 500;
     }
 
@@ -176,7 +182,7 @@
 
     .nav-cta:hover {
       color: var(--white) !important;
-      background: #253252;
+      background: var(--navy-light);
     }
 
     /* Hero */
@@ -194,7 +200,7 @@
     .hero-label {
       display: block;
       margin-bottom: 1rem;
-      color: #e0b457;
+      color: var(--gold);
       font-size: 0.76rem;
       font-weight: 700;
       letter-spacing: 0.1em;
@@ -307,10 +313,127 @@
       font-size: 0.92rem;
     }
 
+    /* Pricing */
+
+    .pricing {
+      padding: 6rem 0;
+    }
+
+    .pricing-header {
+      max-width: 670px;
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
+
+    .pricing-header .section-text {
+      margin: 0 auto;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4rem;
+      align-items: stretch;
+    }
+
+    .pricing-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 2rem;
+    }
+
+    .pricing-card.featured {
+      border: 2px solid var(--red);
+      transform: translateY(-8px);
+    }
+
+    .popular-label {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--red);
+      color: var(--white);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+
+    .pricing-card h3 {
+      font-size: 1.45rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .pricing-description {
+      color: var(--gray);
+      font-size: 0.88rem;
+      min-height: 55px;
+    }
+
+    .price {
+      margin: 1.3rem 0;
+      font-family: "DM Serif Display", serif;
+      font-size: 2.4rem;
+      color: var(--navy);
+    }
+
+    .price small {
+      font-family: "Inter", sans-serif;
+      font-size: 0.75rem;
+      color: var(--gray);
+      font-weight: 500;
+    }
+
+    .pricing-list {
+      margin-bottom: 1.8rem;
+      flex-grow: 1;
+    }
+
+    .pricing-list li {
+      padding: 0.55rem 0;
+      color: var(--gray);
+      font-size: 0.88rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pricing-list li::before {
+      content: "✓";
+      color: var(--red);
+      font-weight: 700;
+      margin-right: 0.6rem;
+    }
+
+    .pricing-card .button {
+      width: 100%;
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .pricing-card.featured .button {
+      background: var(--red);
+    }
+
+    .pricing-note {
+      margin-top: 2rem;
+      text-align: center;
+      color: var(--gray);
+      font-size: 0.82rem;
+    }
+
     /* About */
 
     .about {
       padding: 6rem 0;
+      background: var(--white);
+      border-top: 1px solid var(--border);
     }
 
     .about-grid {
@@ -353,13 +476,14 @@
       margin-top: 1.5rem;
       padding: 1rem 1.2rem;
       border-left: 4px solid var(--red);
-      background: var(--white);
+      background: var(--cream);
       font-weight: 500;
     }
 
     /* CTA */
 
     .cta {
+      background: var(--white);
       padding: 0 0 6rem;
     }
 
@@ -385,10 +509,6 @@
     .cta-box .button {
       background: var(--white);
       color: var(--navy);
-    }
-
-    .cta-box .button:hover {
-      background: #f7f4ed;
     }
 
     /* Footer */
@@ -419,7 +539,7 @@
     }
 
     footer a:hover {
-      color: #e0b457;
+      color: var(--gold);
     }
 
     .footer-contact {
@@ -429,7 +549,7 @@
     .footer-form-link {
       display: inline-block;
       margin-top: 0.7rem;
-      color: #e0b457;
+      color: var(--gold);
       font-weight: 600;
     }
 
@@ -442,8 +562,9 @@
 
     /* Mobile */
 
-    @media (max-width: 850px) {
+    @media (max-width: 900px) {
       .who-grid,
+      .pricing-grid,
       .about-grid {
         grid-template-columns: 1fr;
       }
@@ -452,12 +573,16 @@
         grid-template-columns: 1fr;
       }
 
+      .pricing-card.featured {
+        transform: none;
+      }
+
       .about-box {
         min-height: 250px;
       }
     }
 
-    @media (max-width: 650px) {
+    @media (max-width: 700px) {
       .nav-links a:not(.nav-cta) {
         display: none;
       }
@@ -474,10 +599,6 @@
         width: 100%;
       }
 
-      .who-grid {
-        grid-template-columns: 1fr;
-      }
-
       .footer-content {
         flex-direction: column;
       }
@@ -491,8 +612,6 @@
 
 <body>
 
-  <!-- Navigation -->
-
   <header class="navbar">
     <nav class="container nav-inner">
 
@@ -502,17 +621,11 @@
 
       <div class="nav-links">
 
-        <a href="#services">
-          Services
-        </a>
+        <a href="#services">Services</a>
 
-        <a href="#about">
-          About
-        </a>
+        <a href="#pricing">Pricing</a>
 
-        <a href="#contact">
-          Contact
-        </a>
+        <a href="#about">About</a>
 
         <a
           href="https://docs.google.com/forms/d/e/1FAIpQLSe2ogP-2NOqjWEG12fgWTIfMS38wF5CdUCVIgQIkoj1JdEd_Q/viewform?usp=publish-editor"
@@ -531,9 +644,8 @@
 
   <main>
 
-    <!-- Hero -->
-
     <section class="hero">
+
       <div class="container">
 
         <div class="hero-content">
@@ -564,10 +676,7 @@
               Book a Free Consultation
             </a>
 
-            <a
-              href="#services"
-              class="button button-outline"
-            >
+            <a href="#services" class="button button-outline">
               View Our Services
             </a>
 
@@ -576,10 +685,9 @@
         </div>
 
       </div>
+
     </section>
 
-
-    <!-- Who We Help -->
 
     <section class="who">
 
@@ -596,9 +704,8 @@
           </h2>
 
           <p class="section-text">
-            We help students who want to understand Japanese job hunting,
-            prepare strong application documents, and approach interviews with
-            confidence.
+            We help students understand Japanese job hunting, prepare strong
+            application documents, and approach interviews with confidence.
           </p>
 
         </div>
@@ -607,13 +714,9 @@
 
           <article class="who-card">
 
-            <span class="who-number">
-              01
-            </span>
+            <span class="who-number">01</span>
 
-            <h3>
-              Language School Graduates
-            </h3>
+            <h3>Language School Graduates</h3>
 
             <p>
               Students who completed Japanese language school and continued to
@@ -624,13 +727,9 @@
 
           <article class="who-card">
 
-            <span class="who-number">
-              02
-            </span>
+            <span class="who-number">02</span>
 
-            <h3>
-              Senmon School Students
-            </h3>
+            <h3>Senmon School Students</h3>
 
             <p>
               Vocational school students preparing for their first professional
@@ -641,13 +740,9 @@
 
           <article class="who-card">
 
-            <span class="who-number">
-              03
-            </span>
+            <span class="who-number">03</span>
 
-            <h3>
-              University Students
-            </h3>
+            <h3>University Students</h3>
 
             <p>
               International university students who need practical support with
@@ -663,8 +758,6 @@
     </section>
 
 
-    <!-- Services -->
-
     <section class="services" id="services">
 
       <div class="container">
@@ -676,7 +769,7 @@
           </span>
 
           <h2 class="section-title">
-            Simple, practical support for your Japan job search
+            Practical support for your Japan job search
           </h2>
 
           <p class="section-text">
@@ -690,22 +783,18 @@
 
           <article class="service-card">
 
-            <h3>
-              Japanese Resume
-            </h3>
+            <h3>Japanese Resume</h3>
 
             <p>
               Support creating and improving your Japanese 履歴書 for the company
-              and job you want to apply for.
+              and role you want to apply for.
             </p>
 
           </article>
 
           <article class="service-card">
 
-            <h3>
-              Self-PR and 志望動機
-            </h3>
+            <h3>Self-PR and 志望動機</h3>
 
             <p>
               Build clear, honest, and company-specific self-promotion and
@@ -716,9 +805,7 @@
 
           <article class="service-card">
 
-            <h3>
-              Interview Preparation
-            </h3>
+            <h3>Interview Preparation</h3>
 
             <p>
               Practice common Japanese interview questions and improve your
@@ -729,13 +816,11 @@
 
           <article class="service-card">
 
-            <h3>
-              Job Application Support
-            </h3>
+            <h3>Job Application Support</h3>
 
             <p>
               Get help with application forms, professional emails, document
-              checks, and your next application steps.
+              checks, and application planning.
             </p>
 
           </article>
@@ -747,7 +832,159 @@
     </section>
 
 
-    <!-- About -->
+    <section class="pricing" id="pricing">
+
+      <div class="container">
+
+        <div class="pricing-header">
+
+          <span class="section-label">
+            Launch Pricing
+          </span>
+
+          <h2 class="section-title">
+            Affordable career support
+          </h2>
+
+          <p class="section-text">
+            Introductory prices for international students during the launch of
+            NextStep Careers.
+          </p>
+
+        </div>
+
+        <div class="pricing-grid">
+
+          <article class="pricing-card">
+
+            <h3>Resume Support</h3>
+
+            <p class="pricing-description">
+              For students who need professional application documents.
+            </p>
+
+            <div class="price">
+              ¥2,000
+            </div>
+
+            <ul class="pricing-list">
+
+              <li>Japanese 履歴書 review</li>
+
+              <li>Content corrections</li>
+
+              <li>Self-PR improvement</li>
+
+              <li>志望動機 guidance</li>
+
+              <li>One revision</li>
+
+            </ul>
+
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSe2ogP-2NOqjWEG12fgWTIfMS38wF5CdUCVIgQIkoj1JdEd_Q/viewform?usp=publish-editor"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="button"
+            >
+              Choose Resume Support
+            </a>
+
+          </article>
+
+
+          <article class="pricing-card featured">
+
+            <span class="popular-label">
+              Most Popular
+            </span>
+
+            <h3>Complete Job Package</h3>
+
+            <p class="pricing-description">
+              Complete preparation for your job application and interview.
+            </p>
+
+            <div class="price">
+              ¥5,000
+            </div>
+
+            <ul class="pricing-list">
+
+              <li>Japanese 履歴書 support</li>
+
+              <li>Self-PR and 志望動機</li>
+
+              <li>Application email support</li>
+
+              <li>Interview question preparation</li>
+
+              <li>One mock interview</li>
+
+              <li>Two revisions</li>
+
+            </ul>
+
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSe2ogP-2NOqjWEG12fgWTIfMS38wF5CdUCVIgQIkoj1JdEd_Q/viewform?usp=publish-editor"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="button"
+            >
+              Choose Complete Package
+            </a>
+
+          </article>
+
+
+          <article class="pricing-card">
+
+            <h3>Interview Support</h3>
+
+            <p class="pricing-description">
+              For students who already have an upcoming interview.
+            </p>
+
+            <div class="price">
+              ¥2,500
+            </div>
+
+            <ul class="pricing-list">
+
+              <li>Common interview questions</li>
+
+              <li>Personalized sample answers</li>
+
+              <li>Self-introduction practice</li>
+
+              <li>One mock interview</li>
+
+              <li>Feedback and improvement tips</li>
+
+            </ul>
+
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSe2ogP-2NOqjWEG12fgWTIfMS38wF5CdUCVIgQIkoj1JdEd_Q/viewform?usp=publish-editor"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="button"
+            >
+              Choose Interview Support
+            </a>
+
+          </article>
+
+        </div>
+
+        <p class="pricing-note">
+          The first consultation is free. Payment is requested only after the
+          service details are confirmed.
+        </p>
+
+      </div>
+
+    </section>
+
 
     <section class="about" id="about">
 
@@ -791,7 +1028,7 @@
 
           <p>
             I created NextStep Careers because I understand how confusing
-            Japanese resumes, job applications, interviews, and the overall
+            Japanese resumes, applications, interviews, and the overall
             job-hunting system can be for international students.
           </p>
 
@@ -812,8 +1049,6 @@
     </section>
 
 
-    <!-- Contact -->
-
     <section class="cta" id="contact">
 
       <div class="container">
@@ -821,13 +1056,12 @@
         <div class="cta-box">
 
           <h2>
-            Ready to prepare for your career in Japan?
+            Not sure which service you need?
           </h2>
 
           <p>
-            Tell us about your school, Japanese level, target job, and current
-            challenge. Complete the form to request your free first
-            consultation.
+            Complete the consultation form and tell us about your school,
+            Japanese level, target job, and current challenge.
           </p>
 
           <a
@@ -836,7 +1070,7 @@
             rel="noopener noreferrer"
             class="button"
           >
-            Complete Consultation Form
+            Request a Free Consultation
           </a>
 
         </div>
@@ -847,8 +1081,6 @@
 
   </main>
 
-
-  <!-- Footer -->
 
   <footer>
 
@@ -871,9 +1103,7 @@
 
         <div class="footer-contact">
 
-          <p>
-            Email
-          </p>
+          <p>Email</p>
 
           <a href="mailto:nextstepcareers911@gmail.com">
             nextstepcareers911@gmail.com
