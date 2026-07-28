@@ -14,6 +14,9 @@
     content="Resume, interview, and job application support for international students preparing for full-time careers in Japan."
   >
 
+  <!-- Browser Tab Icon -->
+  <link rel="icon" type="image/png" href="logo.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,10 +28,10 @@
 
   <style>
     :root {
-      --navy: #17213b;
-      --navy-light: #253252;
-      --red: #c64f45;
-      --red-dark: #a93f37;
+      --navy: #0d1b2a;
+      --navy-light: #1b263b;
+      --red: #e63946;
+      --red-dark: #bd2935;
       --cream: #f7f4ed;
       --white: #ffffff;
       --text: #17213b;
@@ -73,7 +76,7 @@
     }
 
     .container {
-      width: min(1060px, calc(100% - 2.5rem));
+      width: min(1100px, calc(100% - 2.5rem));
       margin: 0 auto;
     }
 
@@ -83,7 +86,7 @@
       justify-content: center;
       min-height: 48px;
       padding: 0.8rem 1.4rem;
-      border-radius: 4px;
+      border-radius: 5px;
       font-size: 0.92rem;
       font-weight: 600;
       border: 1px solid transparent;
@@ -105,12 +108,12 @@
     }
 
     .button-outline {
-      border-color: #5e6784;
+      border-color: #66708d;
       color: var(--white);
     }
 
     .button-outline:hover {
-      background: rgba(255, 255, 255, 0.06);
+      background: rgba(255, 255, 255, 0.08);
     }
 
     .section-label {
@@ -136,37 +139,41 @@
     /* Navigation */
 
     .navbar {
-      background: rgba(247, 244, 237, 0.96);
+      background: rgba(255, 255, 255, 0.97);
       border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
       z-index: 100;
+      box-shadow: 0 3px 15px rgba(13, 27, 42, 0.05);
     }
 
     .nav-inner {
-      min-height: 72px;
+      min-height: 82px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 2rem;
     }
 
-    .logo {
-      font-family: "DM Serif Display", serif;
-      font-size: 1.35rem;
-      white-space: nowrap;
+    .logo-link {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
     }
 
-    .logo span {
-      color: var(--red);
+    .site-logo {
+      width: auto;
+      height: 68px;
+      display: block;
+      object-fit: contain;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 1.4rem;
+      gap: 1.35rem;
       font-size: 0.88rem;
-      font-weight: 500;
+      font-weight: 600;
     }
 
     .nav-links a:hover {
@@ -176,8 +183,8 @@
     .nav-cta {
       background: var(--navy);
       color: var(--white);
-      padding: 0.55rem 0.95rem;
-      border-radius: 4px;
+      padding: 0.6rem 1rem;
+      border-radius: 5px;
     }
 
     .nav-cta:hover {
@@ -188,13 +195,19 @@
     /* Hero */
 
     .hero {
-      background: var(--navy);
+      background:
+        radial-gradient(
+          circle at 85% 20%,
+          rgba(230, 57, 70, 0.18),
+          transparent 30%
+        ),
+        var(--navy);
       color: var(--white);
       padding: 7rem 0 6.5rem;
     }
 
     .hero-content {
-      max-width: 780px;
+      max-width: 800px;
     }
 
     .hero-label {
@@ -237,7 +250,7 @@
     }
 
     .who-header {
-      max-width: 650px;
+      max-width: 680px;
       margin-bottom: 2.5rem;
     }
 
@@ -250,19 +263,26 @@
     .who-card {
       background: var(--white);
       border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 1.7rem;
+      border-radius: 8px;
+      padding: 1.8rem;
+      transition: 0.2s ease;
+    }
+
+    .who-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(13, 27, 42, 0.08);
     }
 
     .who-number {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 38px;
-      height: 38px;
+      width: 40px;
+      height: 40px;
       margin-bottom: 1rem;
       border-radius: 50%;
       background: var(--soft);
+      color: var(--red);
       font-size: 0.78rem;
       font-weight: 700;
     }
@@ -287,7 +307,7 @@
     }
 
     .services-header {
-      max-width: 650px;
+      max-width: 680px;
       margin-bottom: 2.8rem;
     }
 
@@ -301,6 +321,12 @@
       border-top: 3px solid var(--navy);
       background: var(--cream);
       padding: 1.8rem;
+      transition: 0.2s ease;
+    }
+
+    .service-card:hover {
+      border-top-color: var(--red);
+      transform: translateY(-3px);
     }
 
     .service-card h3 {
@@ -344,11 +370,21 @@
       border: 1px solid var(--border);
       border-radius: 8px;
       padding: 2rem;
+      transition: 0.2s ease;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 32px rgba(13, 27, 42, 0.08);
     }
 
     .pricing-card.featured {
       border: 2px solid var(--red);
       transform: translateY(-8px);
+    }
+
+    .pricing-card.featured:hover {
+      transform: translateY(-12px);
     }
 
     .popular-label {
@@ -385,13 +421,6 @@
       color: var(--navy);
     }
 
-    .price small {
-      font-family: "Inter", sans-serif;
-      font-size: 0.75rem;
-      color: var(--gray);
-      font-weight: 500;
-    }
-
     .pricing-list {
       margin-bottom: 1.8rem;
       flex-grow: 1;
@@ -417,8 +446,16 @@
       color: var(--white);
     }
 
+    .pricing-card .button:hover {
+      background: var(--navy-light);
+    }
+
     .pricing-card.featured .button {
       background: var(--red);
+    }
+
+    .pricing-card.featured .button:hover {
+      background: var(--red-dark);
     }
 
     .pricing-note {
@@ -438,18 +475,23 @@
 
     .about-grid {
       display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
+      grid-template-columns: 0.85fr 1.15fr;
       gap: 4rem;
       align-items: center;
     }
 
     .about-box {
-      min-height: 330px;
-      background: var(--navy);
+      min-height: 350px;
+      background:
+        linear-gradient(
+          rgba(13, 27, 42, 0.93),
+          rgba(13, 27, 42, 0.93)
+        ),
+        url("logo.png") center / contain no-repeat;
       color: var(--white);
-      border-radius: 6px;
+      border-radius: 8px;
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: center;
       padding: 2rem;
       text-align: center;
@@ -488,9 +530,15 @@
     }
 
     .cta-box {
-      background: var(--red);
+      background:
+        radial-gradient(
+          circle at 90% 20%,
+          rgba(255, 255, 255, 0.15),
+          transparent 25%
+        ),
+        var(--red);
       color: var(--white);
-      border-radius: 8px;
+      border-radius: 10px;
       padding: 4rem 2rem;
       text-align: center;
     }
@@ -511,6 +559,10 @@
       color: var(--navy);
     }
 
+    .cta-box .button:hover {
+      background: var(--cream);
+    }
+
     /* Footer */
 
     footer {
@@ -527,10 +579,12 @@
       margin-bottom: 2rem;
     }
 
-    footer .logo {
-      color: var(--white);
-      display: inline-block;
+    .footer-logo {
+      width: auto;
+      height: 75px;
+      display: block;
       margin-bottom: 0.7rem;
+      filter: brightness(0) invert(1);
     }
 
     footer p,
@@ -573,18 +627,33 @@
         grid-template-columns: 1fr;
       }
 
-      .pricing-card.featured {
+      .pricing-card.featured,
+      .pricing-card.featured:hover {
         transform: none;
       }
 
       .about-box {
-        min-height: 250px;
+        min-height: 280px;
       }
     }
 
     @media (max-width: 700px) {
+      .nav-inner {
+        min-height: 70px;
+      }
+
+      .site-logo {
+        height: 52px;
+        max-width: 210px;
+      }
+
       .nav-links a:not(.nav-cta) {
         display: none;
+      }
+
+      .nav-cta {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.7rem;
       }
 
       .hero {
@@ -606,26 +675,61 @@
       .footer-contact {
         text-align: left;
       }
+
+      .footer-logo {
+        height: 58px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .container {
+        width: min(100% - 1.5rem, 1100px);
+      }
+
+      .site-logo {
+        height: 46px;
+        max-width: 175px;
+      }
+
+      .nav-cta {
+        font-size: 0.7rem;
+      }
+
+      .hero h1 {
+        font-size: 2.7rem;
+      }
     }
   </style>
 </head>
 
 <body>
 
+  <!-- Navigation -->
+
   <header class="navbar">
     <nav class="container nav-inner">
 
-      <a href="#" class="logo">
-        NextStep<span>.</span>Careers
+      <a href="#" class="logo-link">
+        <img
+          src="logo.png"
+          alt="NextStep Careers Logo"
+          class="site-logo"
+        >
       </a>
 
       <div class="nav-links">
 
-        <a href="#services">Services</a>
+        <a href="#services">
+          Services
+        </a>
 
-        <a href="#pricing">Pricing</a>
+        <a href="#pricing">
+          Pricing
+        </a>
 
-        <a href="#about">About</a>
+        <a href="#about">
+          About
+        </a>
 
         <a
           href="https://docs.google.com/forms/d/e/1FAIpQLSfrJraw-V-roQ3SF1rPRhR113htLr6kwwBaJcH97CkNIzUr9Q/viewform?usp=publish-editor"
@@ -644,6 +748,8 @@
 
   <main>
 
+    <!-- Hero -->
+
     <section class="hero">
 
       <div class="container">
@@ -655,7 +761,7 @@
           </span>
 
           <h1>
-            Land your first full-time job in
+            Take your next step towards a career in
             <span>Japan.</span>
           </h1>
 
@@ -676,7 +782,10 @@
               Book a Free Consultation
             </a>
 
-            <a href="#services" class="button button-outline">
+            <a
+              href="#services"
+              class="button button-outline"
+            >
               View Our Services
             </a>
 
@@ -688,6 +797,8 @@
 
     </section>
 
+
+    <!-- Who We Help -->
 
     <section class="who">
 
@@ -714,9 +825,13 @@
 
           <article class="who-card">
 
-            <span class="who-number">01</span>
+            <span class="who-number">
+              01
+            </span>
 
-            <h3>Language School Graduates</h3>
+            <h3>
+              Language School Graduates
+            </h3>
 
             <p>
               Students who completed Japanese language school and continued to
@@ -727,9 +842,13 @@
 
           <article class="who-card">
 
-            <span class="who-number">02</span>
+            <span class="who-number">
+              02
+            </span>
 
-            <h3>Senmon School Students</h3>
+            <h3>
+              Senmon School Students
+            </h3>
 
             <p>
               Vocational school students preparing for their first professional
@@ -740,9 +859,13 @@
 
           <article class="who-card">
 
-            <span class="who-number">03</span>
+            <span class="who-number">
+              03
+            </span>
 
-            <h3>University Students</h3>
+            <h3>
+              University Students
+            </h3>
 
             <p>
               International university students who need practical support with
@@ -757,6 +880,8 @@
 
     </section>
 
+
+    <!-- Services -->
 
     <section class="services" id="services">
 
@@ -783,7 +908,9 @@
 
           <article class="service-card">
 
-            <h3>Japanese Resume</h3>
+            <h3>
+              Japanese Resume
+            </h3>
 
             <p>
               Support creating and improving your Japanese 履歴書 for the company
@@ -794,7 +921,9 @@
 
           <article class="service-card">
 
-            <h3>Self-PR and 志望動機</h3>
+            <h3>
+              Self-PR and 志望動機
+            </h3>
 
             <p>
               Build clear, honest, and company-specific self-promotion and
@@ -805,7 +934,9 @@
 
           <article class="service-card">
 
-            <h3>Interview Preparation</h3>
+            <h3>
+              Interview Preparation
+            </h3>
 
             <p>
               Practice common Japanese interview questions and improve your
@@ -816,7 +947,9 @@
 
           <article class="service-card">
 
-            <h3>Job Application Support</h3>
+            <h3>
+              Job Application Support
+            </h3>
 
             <p>
               Get help with application forms, professional emails, document
@@ -831,6 +964,8 @@
 
     </section>
 
+
+    <!-- Pricing -->
 
     <section class="pricing" id="pricing">
 
@@ -857,7 +992,9 @@
 
           <article class="pricing-card">
 
-            <h3>Resume Support</h3>
+            <h3>
+              Resume Support
+            </h3>
 
             <p class="pricing-description">
               For students who need professional application documents.
@@ -869,15 +1006,25 @@
 
             <ul class="pricing-list">
 
-              <li>Japanese 履歴書 review</li>
+              <li>
+                Japanese 履歴書 review
+              </li>
 
-              <li>Content corrections</li>
+              <li>
+                Content corrections
+              </li>
 
-              <li>Self-PR improvement</li>
+              <li>
+                Self-PR improvement
+              </li>
 
-              <li>志望動機 guidance</li>
+              <li>
+                志望動機 guidance
+              </li>
 
-              <li>One revision</li>
+              <li>
+                One revision
+              </li>
 
             </ul>
 
@@ -899,7 +1046,9 @@
               Most Popular
             </span>
 
-            <h3>Complete Job Package</h3>
+            <h3>
+              Complete Job Package
+            </h3>
 
             <p class="pricing-description">
               Complete preparation for your job application and interview.
@@ -911,17 +1060,29 @@
 
             <ul class="pricing-list">
 
-              <li>Japanese 履歴書 support</li>
+              <li>
+                Japanese 履歴書 support
+              </li>
 
-              <li>Self-PR and 志望動機</li>
+              <li>
+                Self-PR and 志望動機
+              </li>
 
-              <li>Application email support</li>
+              <li>
+                Application email support
+              </li>
 
-              <li>Interview question preparation</li>
+              <li>
+                Interview question preparation
+              </li>
 
-              <li>One mock interview</li>
+              <li>
+                One mock interview
+              </li>
 
-              <li>Two revisions</li>
+              <li>
+                Two revisions
+              </li>
 
             </ul>
 
@@ -939,7 +1100,9 @@
 
           <article class="pricing-card">
 
-            <h3>Interview Support</h3>
+            <h3>
+              Interview Support
+            </h3>
 
             <p class="pricing-description">
               For students who already have an upcoming interview.
@@ -951,15 +1114,25 @@
 
             <ul class="pricing-list">
 
-              <li>Common interview questions</li>
+              <li>
+                Common interview questions
+              </li>
 
-              <li>Personalized sample answers</li>
+              <li>
+                Personalized sample answers
+              </li>
 
-              <li>Self-introduction practice</li>
+              <li>
+                Self-introduction practice
+              </li>
 
-              <li>One mock interview</li>
+              <li>
+                One mock interview
+              </li>
 
-              <li>Feedback and improvement tips</li>
+              <li>
+                Feedback and improvement tips
+              </li>
 
             </ul>
 
@@ -986,6 +1159,8 @@
     </section>
 
 
+    <!-- About -->
+
     <section class="about" id="about">
 
       <div class="container about-grid">
@@ -999,8 +1174,7 @@
             </strong>
 
             <p>
-              Honest career guidance from someone who understands the
-              international student journey in Japan.
+              Your next step. Our support.
             </p>
 
           </div>
@@ -1018,28 +1192,25 @@
           </h2>
 
           <p>
-            Hi, I am Prakash Dhamala.
+            NextStep Careers was created to support international students who
+            are preparing to begin their professional careers in Japan.
           </p>
 
           <p>
-            I completed Japanese language education, passed JLPT N2, and now
-            study at a vocational college in Japan.
+            We understand how confusing Japanese resumes, job applications,
+            interviews, and the overall job-hunting system can be for
+            international students.
           </p>
 
           <p>
-            I created NextStep Careers because I understand how confusing
-            Japanese resumes, applications, interviews, and the overall
-            job-hunting system can be for international students.
-          </p>
-
-          <p>
-            My goal is to help students prepare properly and confidently for
-            their first full-time career in Japan.
+            Our goal is to provide practical, personalized, and honest support
+            based on each student's education, Japanese ability, experience,
+            target industry, and career goals.
           </p>
 
           <div class="about-note">
             No fake experience. No fake documents. No guaranteed job promises.
-            Only honest and practical support.
+            Only honest and practical career support.
           </div>
 
         </div>
@@ -1049,6 +1220,8 @@
     </section>
 
 
+    <!-- Contact CTA -->
+
     <section class="cta" id="contact">
 
       <div class="container">
@@ -1056,12 +1229,12 @@
         <div class="cta-box">
 
           <h2>
-            Not sure which service you need?
+            Ready to take your next career step?
           </h2>
 
           <p>
-            Complete the consultation form and tell us about your school,
-            Japanese level, target job, and current challenge.
+            Tell us about your school, Japanese level, target job, graduation
+            date, and current challenge. Your first consultation is free.
           </p>
 
           <a
@@ -1082,6 +1255,8 @@
   </main>
 
 
+  <!-- Footer -->
+
   <footer>
 
     <div class="container">
@@ -1090,9 +1265,11 @@
 
         <div>
 
-          <a href="#" class="logo">
-            NextStep<span>.</span>Careers
-          </a>
+          <img
+            src="logo.png"
+            alt="NextStep Careers Logo"
+            class="footer-logo"
+          >
 
           <p>
             Career support for international students preparing to work in
@@ -1103,7 +1280,9 @@
 
         <div class="footer-contact">
 
-          <p>Email</p>
+          <p>
+            Email
+          </p>
 
           <a href="mailto:nextstepcareers911@gmail.com">
             nextstepcareers911@gmail.com
